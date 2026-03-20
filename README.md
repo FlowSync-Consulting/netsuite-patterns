@@ -1,40 +1,9 @@
-# NetSuite Patterns (Private Source Repository)
+# NetSuite Patterns
 
-Production-tested SuiteScript 2.1 patterns from real enterprise implementations.
-Each pattern includes documentation, tests, and SDF deployment artifacts.
+Production-tested SuiteScript 2.1 patterns from real enterprise implementations. Each pattern includes documentation, tests, and SDF deployment artifacts.
 
-> These patterns come from projects that have collectively delivered $750K+ in
-> annual value across 9 enterprise implementations.
+> These patterns come from projects that have collectively delivered $750K+ in annual value across 9 enterprise implementations.
 > [See the case studies at FlowSync Consulting](https://flowsyncconsulting.com/portfolio/)
-
-**Important:** This is the **private source repository** for FlowSync Consulting's NetSuite patterns. Code is automatically sanitized and published to the public [FlowSync-Consulting/netsuite-patterns](https://github.com/FlowSync-Consulting/netsuite-patterns) repository.
-
-Client names, account IDs, and custom field prefixes are stored in Infisical (never in git). The publish script handles all anonymization automatically.
-
-## Developer Documentation
-
-- 📘 [Developer Workflow](docs/DEVELOPER_WORKFLOW.md) - Adding and modifying patterns
-- 🚨 [Emergency Response](docs/EMERGENCY_RESPONSE.md) - Incident handling procedures
-- 🎓 [Onboarding Guide](docs/ONBOARDING.md) - New developer setup
-- 🏗️ [Architecture Decision Record](docs/ADR-001-PRIVATE-TO-PUBLIC-ARCHITECTURE.md) - Why this architecture exists
-
-### Quick Start
-
-```bash
-# Add a new pattern
-mkdir patterns/my-new-pattern
-# ... write code with generic placeholders ...
-git add patterns/my-new-pattern
-git commit -m "Add new pattern"
-
-# Publish to public repo
-./scripts/publish.sh --dry-run  # Preview first
-./scripts/publish.sh            # Publish with confirmation
-```
-
-### Security
-
-All client identifiers are stored in Infisical project `flowsync-blocked-terms`. Never commit actual client names, account IDs, or custom prefixes to this repository.
 
 ## Patterns
 
@@ -68,9 +37,7 @@ All test suites use Jest with custom NetSuite module mocks in `shared/test_utils
 
 ## About
 
-Built by [Ben Saralegui](https://flowsyncconsulting.com/about/), NetSuite
-SuiteCloud Developer II. I help mid-market companies automate manual processes
-and integrate disconnected systems.
+Built by [Ben Saralegui](https://flowsyncconsulting.com/about/), NetSuite SuiteCloud Developer II. I help mid-market companies automate manual processes and integrate disconnected systems.
 
 [Book a free discovery call](https://flowsyncconsulting.com/contact/)
 
