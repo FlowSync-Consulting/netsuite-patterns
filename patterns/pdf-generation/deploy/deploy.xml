@@ -1,0 +1,18 @@
+<deploy>
+    <configuration>
+        <path>~/SuiteScripts/patterns/pdf-generation/*</path>
+    </configuration>
+    <files>
+        <path>~/SuiteScripts/patterns/pdf-generation/src/fs_pdf_generator_sl.js</path>
+        <path>~/SuiteScripts/patterns/pdf-generation/src/fs_email_sender_wa.js</path>
+        <path>~/SuiteScripts/patterns/pdf-generation/src/lib/data_sources.js</path>
+        <path>~/SuiteScripts/patterns/pdf-generation/src/lib/line_item_grouper.js</path>
+        <path>~/SuiteScripts/patterns/pdf-generation/src/templates/invoice_template.html</path>
+    </files>
+    <objects>
+        <path>~/Objects/customscript_fs_pdf_generator.xml</path>
+        <path>~/Objects/customdeploy_fs_pdf_generator.xml</path>
+        <path>~/Objects/customscript_fs_email_sender.xml</path>
+        <path>~/Objects/customdeploy_fs_email_sender.xml</path>
+    </objects>
+</deploy>

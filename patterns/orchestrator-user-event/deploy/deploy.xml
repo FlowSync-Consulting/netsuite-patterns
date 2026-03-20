@@ -1,0 +1,36 @@
+<manifest projecttype="ACCOUNTCUSTOMIZATION">
+  <projectname>Orchestrator User Event Pattern</projectname>
+  <frameworkversion>1.0</frameworkversion>
+  <dependencies>
+    <features>
+      <feature required="true">CUSTOMRECORDS</feature>
+      <feature required="true">CUSTOMSEGMENTS</feature>
+    </features>
+  </dependencies>
+  <objects>
+    <!-- User Event Script -->
+    <path>~/FileCabinet/SuiteScripts/FlowSync/InvoiceOrchestrator/fs_invoice_orchestrator_ue.js</path>
+
+    <!-- Handler Registry -->
+    <path>~/FileCabinet/SuiteScripts/FlowSync/InvoiceOrchestrator/lib/fs_handler_registry.js</path>
+
+    <!-- Base Handler -->
+    <path>~/FileCabinet/SuiteScripts/FlowSync/InvoiceOrchestrator/config/fs_base_handler.js</path>
+
+    <!-- Handler Modules -->
+    <path>~/FileCabinet/SuiteScripts/FlowSync/InvoiceOrchestrator/handlers/fs_surcharge_handler.js</path>
+    <path>~/FileCabinet/SuiteScripts/FlowSync/InvoiceOrchestrator/handlers/fs_validation_handler.js</path>
+    <path>~/FileCabinet/SuiteScripts/FlowSync/InvoiceOrchestrator/handlers/fs_field_derivation_handler.js</path>
+
+    <!-- Script Deployment -->
+    <path>~/Objects/customscript_fs_invoice_orchestrator_ue.xml</path>
+    <path>~/Objects/customdeploy_fs_invoice_orchestrator_ue.xml</path>
+
+    <!-- Custom Fields -->
+    <path>~/Objects/custitem_fs_surcharge_percentage.xml</path>
+    <path>~/Objects/custentity_fs_add_surcharge.xml</path>
+    <path>~/Objects/custbody_fs_territory.xml</path>
+    <path>~/Objects/custbody_fs_approval_required.xml</path>
+    <path>~/Objects/custbody_fs_risk_level.xml</path>
+  </objects>
+</manifest>

@@ -1,0 +1,29 @@
+<customlist scriptid="customlist_fs_entry_outcome">
+  <description>Work completion outcomes for billing purposes</description>
+  <isinactive>F</isinactive>
+  <ismatrixoption>F</ismatrixoption>
+  <isordered>T</isordered>
+  <name>Work Entry Outcome</name>
+  <customvalues>
+    <customvalue scriptid="val_repaired">
+      <abbreviation>R</abbreviation>
+      <isinactive>F</isinactive>
+      <value>Repaired</value>
+    </customvalue>
+    <customvalue scriptid="val_replaced">
+      <abbreviation>RP</abbreviation>
+      <isinactive>F</isinactive>
+      <value>Replaced</value>
+    </customvalue>
+    <customvalue scriptid="val_unrepairable">
+      <abbreviation>U</abbreviation>
+      <isinactive>F</isinactive>
+      <value>Unrepairable</value>
+    </customvalue>
+    <customvalue scriptid="val_no_issue">
+      <abbreviation>NI</abbreviation>
+      <isinactive>F</isinactive>
+      <value>No Issue Found</value>
+    </customvalue>
+  </customvalues>
+</customlist>

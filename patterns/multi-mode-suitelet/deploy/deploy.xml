@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy>
+    <!--
+    SDF Deployment Manifest for Multi-Mode Suitelet Pattern
+
+    This file defines the deployment package for the multi-mode suitelet pattern.
+    Anonymized from real production deployment.
+
+    USAGE:
+    1. Copy files to your NetSuite FileCabinet under /SuiteScripts/
+    2. Update file paths in this manifest to match your directory structure
+    3. Deploy using: suitecloud project:deploy
+    4. Create script and deployment records in NetSuite UI
+    -->
+
+    <files>
+        <!-- Main Suitelet -->
+        <path>~/src/FileCabinet/SuiteScripts/patterns/multi-mode-suitelet/fs_workflow_tracker_sl.js</path>
+
+        <!-- Mode Modules -->
+        <path>~/src/FileCabinet/SuiteScripts/patterns/multi-mode-suitelet/modes/entry_mode.js</path>
+        <path>~/src/FileCabinet/SuiteScripts/patterns/multi-mode-suitelet/modes/management_mode.js</path>
+        <path>~/src/FileCabinet/SuiteScripts/patterns/multi-mode-suitelet/modes/billing_mode.js</path>
+
+        <!-- Utility Modules -->
+        <path>~/src/FileCabinet/SuiteScripts/patterns/multi-mode-suitelet/lib/record_helpers.js</path>
+        <path>~/src/FileCabinet/SuiteScripts/patterns/multi-mode-suitelet/lib/so_builder.js</path>
+
+        <!-- Client Scripts -->
+        <path>~/src/FileCabinet/SuiteScripts/patterns/multi-mode-suitelet/client_scripts/fs_workflow_entry_cs.js</path>
+        <path>~/src/FileCabinet/SuiteScripts/patterns/multi-mode-suitelet/client_scripts/fs_workflow_manage_cs.js</path>
+        <path>~/src/FileCabinet/SuiteScripts/patterns/multi-mode-suitelet/client_scripts/fs_workflow_billing_cs.js</path>
+    </files>
+
+    <objects>
+        <!-- Custom Record Type -->
+        <path>~/src/Objects/CustomRecordTypes/customrecord_fs_work_entry.xml</path>
+
+        <!-- Custom Lists -->
+        <path>~/src/Objects/CustomLists/customlist_fs_entry_status.xml</path>
+        <path>~/src/Objects/CustomLists/customlist_fs_entry_outcome.xml</path>
+
+        <!-- Script Definition (create manually in NetSuite UI) -->
+        <!-- Script ID: customscript_fs_workflow_tracker -->
+        <!-- Script Type: Suitelet -->
+        <!-- Script File: fs_workflow_tracker_sl.js -->
+
+        <!-- Script Deployment (create manually in NetSuite UI) -->
+        <!-- Deployment ID: customdeploy_fs_workflow_tracker -->
+        <!-- Status: Testing or Released -->
+    </objects>
+</deploy>

@@ -1,0 +1,29 @@
+<customlist scriptid="customlist_fs_entry_status">
+  <description>Status values for work entry workflow</description>
+  <isinactive>F</isinactive>
+  <ismatrixoption>F</ismatrixoption>
+  <isordered>T</isordered>
+  <name>Work Entry Status</name>
+  <customvalues>
+    <customvalue scriptid="val_new">
+      <abbreviation>N</abbreviation>
+      <isinactive>F</isinactive>
+      <value>New</value>
+    </customvalue>
+    <customvalue scriptid="val_in_evaluation">
+      <abbreviation>E</abbreviation>
+      <isinactive>F</isinactive>
+      <value>In Evaluation</value>
+    </customvalue>
+    <customvalue scriptid="val_complete">
+      <abbreviation>C</abbreviation>
+      <isinactive>F</isinactive>
+      <value>Complete</value>
+    </customvalue>
+    <customvalue scriptid="val_billed">
+      <abbreviation>B</abbreviation>
+      <isinactive>F</isinactive>
+      <value>Billed</value>
+    </customvalue>
+  </customvalues>
+</customlist>

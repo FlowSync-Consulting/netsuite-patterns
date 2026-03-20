@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest projecttype="ACCOUNTCUSTOMIZATION">
+  <projectname>Field Service RESTlet API Suite</projectname>
+  <frameworkversion>1.0</frameworkversion>
+
+  <!-- Customer RESTlet -->
+  <file>
+    <path>~/FileCabinet/SuiteScripts/field_service_api/fs_customer_rl.js</path>
+  </file>
+
+  <!-- Job RESTlet -->
+  <file>
+    <path>~/FileCabinet/SuiteScripts/field_service_api/fs_job_rl.js</path>
+  </file>
+
+  <!-- Sales Order RESTlet -->
+  <file>
+    <path>~/FileCabinet/SuiteScripts/field_service_api/fs_sales_order_rl.js</path>
+  </file>
+
+  <!-- Fulfillment RESTlet -->
+  <file>
+    <path>~/FileCabinet/SuiteScripts/field_service_api/fs_fulfillment_rl.js</path>
+  </file>
+
+  <!-- Invoice RESTlet -->
+  <file>
+    <path>~/FileCabinet/SuiteScripts/field_service_api/fs_invoice_rl.js</path>
+  </file>
+
+  <!-- Payment RESTlet -->
+  <file>
+    <path>~/FileCabinet/SuiteScripts/field_service_api/fs_payment_rl.js</path>
+  </file>
+
+  <!-- Shared Libraries -->
+  <file>
+    <path>~/FileCabinet/SuiteScripts/field_service_api/lib/validation.js</path>
+  </file>
+
+  <file>
+    <path>~/FileCabinet/SuiteScripts/field_service_api/lib/error_handler.js</path>
+  </file>
+
+  <file>
+    <path>~/FileCabinet/SuiteScripts/field_service_api/lib/external_id_matcher.js</path>
+  </file>
+
+  <!-- Custom Field: Assigned Technician (example) -->
+  <object>
+    <path>~/Objects/custentity_fs_assigned_tech.xml</path>
+  </object>
+</manifest>

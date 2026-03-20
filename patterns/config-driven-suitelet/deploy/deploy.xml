@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy>
+    <!--
+    SDF Deployment Manifest for Config-Driven Suitelet Pattern
+
+    This file defines the deployment package for the config-driven suitelet pattern.
+    Anonymized from real production deployment.
+
+    USAGE:
+    1. Copy files to your NetSuite FileCabinet under /SuiteScripts/
+    2. Update file paths in this manifest to match your directory structure
+    3. Deploy using: suitecloud project:deploy
+    -->
+
+    <files>
+        <path>~/src/FileCabinet/SuiteScripts/patterns/config-driven-suitelet/fs_config_driven_form_builder.js</path>
+        <path>~/src/FileCabinet/SuiteScripts/patterns/config-driven-suitelet/fs_territory_report_columns_config.js</path>
+        <path>~/src/FileCabinet/SuiteScripts/patterns/config-driven-suitelet/fs_territory_performance_sl.js</path>
+    </files>
+
+    <objects>
+        <!-- Script Definition -->
+        <path>~/src/Objects/Scripts/customscript_fs_territory_performance.xml</path>
+
+        <!-- Script Deployment -->
+        <path>~/src/Objects/ScriptDeployments/customdeploy_fs_territory_performance.xml</path>
+    </objects>
+</deploy>

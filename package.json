@@ -1,0 +1,24 @@
+{
+  "name": "netsuite-patterns",
+  "version": "1.0.0",
+  "description": "Production-tested SuiteScript 2.1 patterns from enterprise NetSuite implementations",
+  "private": false,
+  "scripts": {
+    "test": "jest --verbose",
+    "check-links": "bash scripts/check-links.sh"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  },
+  "keywords": [
+    "netsuite",
+    "suitescript",
+    "suitescript-2-1",
+    "erp",
+    "automation",
+    "integration",
+    "patterns"
+  ],
+  "author": "Ben Saralegui <dev@flowsyncconsulting.com>",
+  "license": "MIT"
+}

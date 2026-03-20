@@ -1,0 +1,363 @@
+{
+  "info": {
+    "name": "NetSuite Field Service API",
+    "description": "RESTlet API endpoints for field service management integration",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "oauth1",
+    "oauth1": [
+      {
+        "key": "consumerKey",
+        "value": "{{consumer_key}}",
+        "type": "string"
+      },
+      {
+        "key": "consumerSecret",
+        "value": "{{consumer_secret}}",
+        "type": "string"
+      },
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      },
+      {
+        "key": "tokenSecret",
+        "value": "{{token_secret}}",
+        "type": "string"
+      },
+      {
+        "key": "signatureMethod",
+        "value": "HMAC-SHA256",
+        "type": "string"
+      },
+      {
+        "key": "realm",
+        "value": "{{account_id}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "https://{{account_id}}.restlets.api.netsuite.com/app/site/hosting/restlet.nl",
+      "type": "string"
+    },
+    {
+      "key": "account_id",
+      "value": "YOUR_ACCOUNT_ID",
+      "type": "string"
+    },
+    {
+      "key": "consumer_key",
+      "value": "YOUR_CONSUMER_KEY",
+      "type": "string"
+    },
+    {
+      "key": "consumer_secret",
+      "value": "YOUR_CONSUMER_SECRET",
+      "type": "string"
+    },
+    {
+      "key": "token",
+      "value": "YOUR_TOKEN",
+      "type": "string"
+    },
+    {
+      "key": "token_secret",
+      "value": "YOUR_TOKEN_SECRET",
+      "type": "string"
+    },
+    {
+      "key": "customer_restlet_id",
+      "value": "123",
+      "type": "string"
+    },
+    {
+      "key": "job_restlet_id",
+      "value": "124",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Customer",
+      "item": [
+        {
+          "name": "Get Customer",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}?script={{customer_restlet_id}}&deploy=1&external_id=FS-CUST-12345",
+              "host": ["{{base_url}}"],
+              "query": [
+                {
+                  "key": "script",
+                  "value": "{{customer_restlet_id}}"
+                },
+                {
+                  "key": "deploy",
+                  "value": "1"
+                },
+                {
+                  "key": "external_id",
+                  "value": "FS-CUST-12345"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Customer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"external_id\": \"FS-CUST-12345\",\n  \"company_name\": \"Example Field Services LLC\",\n  \"email\": \"contact@example.com\",\n  \"phone\": \"555-1234\",\n  \"subsidiary_id\": \"1\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}?script={{customer_restlet_id}}&deploy=1",
+              "host": ["{{base_url}}"],
+              "query": [
+                {
+                  "key": "script",
+                  "value": "{{customer_restlet_id}}"
+                },
+                {
+                  "key": "deploy",
+                  "value": "1"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Upsert Customer",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"external_id\": \"FS-CUST-12345\",\n  \"company_name\": \"Example Field Services LLC (Updated)\",\n  \"email\": \"newemail@example.com\",\n  \"phone\": \"555-5678\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}?script={{customer_restlet_id}}&deploy=1",
+              "host": ["{{base_url}}"],
+              "query": [
+                {
+                  "key": "script",
+                  "value": "{{customer_restlet_id}}"
+                },
+                {
+                  "key": "deploy",
+                  "value": "1"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Job",
+      "item": [
+        {
+          "name": "Create Job",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"external_id\": \"FS-JOB-98765\",\n  \"customer_external_id\": \"FS-CUST-12345\",\n  \"job_name\": \"Water Damage Restoration - 123 Main St\",\n  \"status\": \"pending\",\n  \"assigned_technician\": \"John Smith\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}?script={{job_restlet_id}}&deploy=1",
+              "host": ["{{base_url}}"],
+              "query": [
+                {
+                  "key": "script",
+                  "value": "{{job_restlet_id}}"
+                },
+                {
+                  "key": "deploy",
+                  "value": "1"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Job Status",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"external_id\": \"FS-JOB-98765\",\n  \"status\": \"completed\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}?script={{job_restlet_id}}&deploy=1",
+              "host": ["{{base_url}}"],
+              "query": [
+                {
+                  "key": "script",
+                  "value": "{{job_restlet_id}}"
+                },
+                {
+                  "key": "deploy",
+                  "value": "1"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sales Order",
+      "item": [
+        {
+          "name": "Create Sales Order",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"external_id\": \"FS-SO-55555\",\n  \"customer_external_id\": \"FS-CUST-12345\",\n  \"job_external_id\": \"FS-JOB-98765\",\n  \"order_date\": \"2026-03-15\",\n  \"line_items\": [\n    {\n      \"item_id\": \"100\",\n      \"quantity\": 5,\n      \"rate\": 49.99,\n      \"description\": \"Water extraction equipment rental\"\n    },\n    {\n      \"item_id\": \"101\",\n      \"quantity\": 10,\n      \"rate\": 12.50,\n      \"description\": \"Dehumidifier rental (daily)\"\n    }\n  ]\n}"
+            },
+            "url": "{{base_url}}?script=125&deploy=1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Fulfillment",
+      "item": [
+        {
+          "name": "Create Full Fulfillment",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sales_order_external_id\": \"FS-SO-55555\",\n  \"shipment_date\": \"2026-03-16\",\n  \"tracking_number\": \"1Z999AA10123456784\"\n}"
+            },
+            "url": "{{base_url}}?script=126&deploy=1"
+          }
+        },
+        {
+          "name": "Create Partial Fulfillment",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sales_order_external_id\": \"FS-SO-55555\",\n  \"shipment_date\": \"2026-03-16\",\n  \"line_items\": [\n    {\n      \"line_number\": 0,\n      \"quantity\": 3\n    }\n  ]\n}"
+            },
+            "url": "{{base_url}}?script=126&deploy=1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Invoice",
+      "item": [
+        {
+          "name": "Create Invoice",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sales_order_external_id\": \"FS-SO-55555\",\n  \"invoice_date\": \"2026-03-17\",\n  \"memo\": \"Field service work completed - water damage restoration\"\n}"
+            },
+            "url": "{{base_url}}?script=127&deploy=1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Payment",
+      "item": [
+        {
+          "name": "Apply Payment to Invoice",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customer_external_id\": \"FS-CUST-12345\",\n  \"payment_date\": \"2026-03-18\",\n  \"amount\": 1250.00,\n  \"payment_method\": \"Check\",\n  \"reference_number\": \"CHK-9876\",\n  \"invoice_external_id\": \"FS-INV-11111\"\n}"
+            },
+            "url": "{{base_url}}?script=128&deploy=1"
+          }
+        },
+        {
+          "name": "Overpayment (Creates Deposit)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customer_external_id\": \"FS-CUST-12345\",\n  \"payment_date\": \"2026-03-18\",\n  \"amount\": 1500.00,\n  \"payment_method\": \"Check\",\n  \"reference_number\": \"CHK-9877\",\n  \"invoice_external_id\": \"FS-INV-11111\"\n}"
+            },
+            "url": "{{base_url}}?script=128&deploy=1"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest projecttype="SUITEAPP">
+    <projectname>Integration Pipeline Pattern</projectname>
+    <frameworkversion>1.0</frameworkversion>
+
+    <!-- Inbound RESTlet -->
+    <file>
+        <path>~/FileCabinet/SuiteScripts/integration-pipeline/fs_inbound_rl.js</path>
+    </file>
+
+    <!-- Processor Map/Reduce -->
+    <file>
+        <path>~/FileCabinet/SuiteScripts/integration-pipeline/fs_processor_mr.js</path>
+    </file>
+
+    <!-- Library: Segmentation -->
+    <file>
+        <path>~/FileCabinet/SuiteScripts/integration-pipeline/lib/segmentation.js</path>
+    </file>
+
+    <!-- Library: Duplicate Detector -->
+    <file>
+        <path>~/FileCabinet/SuiteScripts/integration-pipeline/lib/duplicate_detector.js</path>
+    </file>
+
+    <!-- Library: Status Machine -->
+    <file>
+        <path>~/FileCabinet/SuiteScripts/integration-pipeline/lib/status_machine.js</path>
+    </file>
+
+    <!-- Library: Validation -->
+    <file>
+        <path>~/FileCabinet/SuiteScripts/integration-pipeline/lib/validation.js</path>
+    </file>
+
+    <!-- Library: Error Handler -->
+    <file>
+        <path>~/FileCabinet/SuiteScripts/integration-pipeline/lib/error_handler.js</path>
+    </file>
+
+    <!-- Script Deployments -->
+    <object>
+        <path>~/Objects/customscript_fs_inbound_rl.xml</path>
+    </object>
+
+    <object>
+        <path>~/Objects/customdeploy_fs_inbound_rl.xml</path>
+    </object>
+
+    <object>
+        <path>~/Objects/customscript_fs_processor_mr.xml</path>
+    </object>
+
+    <object>
+        <path>~/Objects/customdeploy_fs_processor_mr.xml</path>
+    </object>
+
+    <!-- Custom Record Type -->
+    <object>
+        <path>~/Objects/customrecord_integration_staging.xml</path>
+    </object>
+</manifest>

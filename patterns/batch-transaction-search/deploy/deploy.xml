@@ -1,0 +1,14 @@
+<deploy>
+    <configuration>
+        <path>~/SuiteScripts/patterns/batch-transaction-search/*</path>
+    </configuration>
+    <files>
+        <path>~/SuiteScripts/patterns/batch-transaction-search/src/fs_batch_search_sl.js</path>
+        <path>~/SuiteScripts/patterns/batch-transaction-search/src/lib/input_parser.js</path>
+        <path>~/SuiteScripts/patterns/batch-transaction-search/src/lib/result_renderer.js</path>
+    </files>
+    <objects>
+        <path>~/Objects/customscript_fs_batch_search.xml</path>
+        <path>~/Objects/customdeploy_fs_batch_search.xml</path>
+    </objects>
+</deploy>

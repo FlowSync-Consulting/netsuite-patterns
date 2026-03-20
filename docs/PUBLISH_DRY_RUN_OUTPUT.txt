@@ -1,0 +1,338 @@
+[2026-03-20 22:02:04] [INFO] === FlowSync Publish Script Started: Fri Mar 20 10:02:04 PM UTC 2026 ===
+[2026-03-20 22:02:04] [INFO] Log file: /home/ben/.local/share/flowsync-publish/publish-2026-03-20-220204.log
+[2026-03-20 22:02:04] [INFO] Checking dependencies...
+[2026-03-20 22:02:04] [INFO] All dependencies present
+[2026-03-20 22:02:04] [INFO] DRY RUN MODE - No changes will be made
+[2026-03-20 22:02:04] [INFO] Publishing all patterns
+[2026-03-20 22:02:04] [INFO] Created temporary directory: /tmp/flowsync-publish-MQdWcU
+[2026-03-20 22:02:04] [INFO] === LAYER 1: Pre-Publish Private Repo Scan ===
+[2026-03-20 22:02:04] [INFO] Running gitleaks scan on private repository...
+
+    ○
+    │╲
+    │ ○
+    ○ ░
+    ░    gitleaks
+
+[90m10:02PM[0m [32mINF[0m scan completed in 31.8ms
+[90m10:02PM[0m [32mINF[0m no leaks found
+[2026-03-20 22:02:05] [INFO] Gitleaks scan passed
+[2026-03-20 22:02:05] [INFO] Fetching blocked terms from Infisical...
+[2026-03-20 22:02:05] [INFO] GitHub token retrieved
+[2026-03-20 22:02:05] [INFO] Scanning for blocked terms in tracked files...
+[2026-03-20 22:02:05] [INFO] Found blocked terms: 15 items
+[2026-03-20 22:02:10] [INFO] LAYER 1 PASSED: No blocked terms found in private repo
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /tmp/flowsync-publish-MQdWcU/staging/.git/
+Switched to a new branch 'main'
+[2026-03-20 22:02:10] [INFO] === LAYER 3: .publishignore Support ===
+[2026-03-20 22:02:10] [INFO] Reading .publishignore file...
+[2026-03-20 22:02:10] [INFO]   Excluding: .github/
+[2026-03-20 22:02:10] [INFO]   Excluding: scripts/install-hooks.sh
+[2026-03-20 22:02:10] [INFO]   Excluding: scripts/publish.sh
+[2026-03-20 22:02:10] [INFO]   Excluding: .gitleaks.toml
+[2026-03-20 22:02:10] [INFO]   Excluding: .publishignore
+[2026-03-20 22:02:10] [INFO]   Excluding: ANONYMIZATION.md
+[2026-03-20 22:02:10] [INFO]   Excluding: node_modules/
+[2026-03-20 22:02:10] [INFO]   Excluding: .venv/
+[2026-03-20 22:02:10] [INFO]   Excluding: *.log
+[2026-03-20 22:02:10] [INFO]   Excluding: .env
+[2026-03-20 22:02:10] [INFO]   Excluding: .env.*
+[2026-03-20 22:02:10] [INFO]   Excluding: .vscode/
+[2026-03-20 22:02:10] [INFO]   Excluding: .idea/
+[2026-03-20 22:02:10] [INFO]   Excluding: *.swp
+[2026-03-20 22:02:10] [INFO]   Excluding: *.swo
+[2026-03-20 22:02:10] [INFO]   Excluding: *~
+[2026-03-20 22:02:10] [INFO]   Excluding: .DS_Store
+[2026-03-20 22:02:10] [INFO]   Excluding: Thumbs.db
+[2026-03-20 22:02:10] [INFO]   Excluding: .git/
+[2026-03-20 22:02:10] [INFO]   Excluding: .gitignore
+[2026-03-20 22:02:10] [INFO]   Excluding: .gitattributes
+[2026-03-20 22:02:10] [INFO] Copying files with exclusions...
+sending incremental file list
+./
+LICENSE
+LINK_INVENTORY.md
+README.md
+SETUP_STATUS.md
+jest.config.js
+package-lock.json
+package.json
+docs/
+docs/PATTERNS.md
+docs/PUBLISH_DRY_RUN_OUTPUT.txt
+docs/PUBLISH_SCRIPT_USAGE.md
+docs/TESTING.md
+patterns/
+patterns/batch-transaction-search/
+patterns/batch-transaction-search/README.md
+patterns/batch-transaction-search/deploy/
+patterns/batch-transaction-search/deploy/deploy.xml
+patterns/batch-transaction-search/src/
+patterns/batch-transaction-search/src/fs_batch_search_sl.js
+patterns/batch-transaction-search/src/lib/
+patterns/batch-transaction-search/src/lib/input_parser.js
+patterns/batch-transaction-search/src/lib/result_renderer.js
+patterns/config-driven-suitelet/
+patterns/config-driven-suitelet/README.md
+patterns/config-driven-suitelet/__tests__/
+patterns/config-driven-suitelet/__tests__/fs_config_driven_form_builder.spec.js
+patterns/config-driven-suitelet/deploy/
+patterns/config-driven-suitelet/deploy/deploy.xml
+patterns/config-driven-suitelet/src/
+patterns/config-driven-suitelet/src/fs_config_driven_form_builder.js
+patterns/config-driven-suitelet/src/fs_territory_performance_sl.js
+patterns/config-driven-suitelet/src/fs_territory_report_columns_config.js
+patterns/integration-pipeline/
+patterns/integration-pipeline/README.md
+patterns/integration-pipeline/deploy.xml
+patterns/integration-pipeline/fs_inbound_rl.js
+patterns/integration-pipeline/fs_processor_mr.js
+patterns/integration-pipeline/lib/
+patterns/integration-pipeline/lib/duplicate_detector.js
+patterns/integration-pipeline/lib/error_handler.js
+patterns/integration-pipeline/lib/segmentation.js
+patterns/integration-pipeline/lib/status_machine.js
+patterns/integration-pipeline/lib/validation.js
+patterns/integration-pipeline/test/
+patterns/integration-pipeline/test/duplicate_detector.test.js
+patterns/integration-pipeline/test/segmentation.test.js
+patterns/integration-pipeline/test/status_machine.test.js
+patterns/multi-mode-suitelet/
+patterns/multi-mode-suitelet/README.md
+patterns/multi-mode-suitelet/__tests__/
+patterns/multi-mode-suitelet/__tests__/entry_mode.test.js
+patterns/multi-mode-suitelet/__tests__/so_builder.test.js
+patterns/multi-mode-suitelet/__tests__/workflow_tracker.test.js
+patterns/multi-mode-suitelet/deploy/
+patterns/multi-mode-suitelet/deploy/deploy.xml
+patterns/multi-mode-suitelet/objects/
+patterns/multi-mode-suitelet/objects/customlist_fs_entry_outcome.xml
+patterns/multi-mode-suitelet/objects/customlist_fs_entry_status.xml
+patterns/multi-mode-suitelet/objects/customrecord_fs_work_entry.xml
+patterns/multi-mode-suitelet/src/
+patterns/multi-mode-suitelet/src/fs_workflow_tracker_sl.js
+patterns/multi-mode-suitelet/src/client_scripts/
+patterns/multi-mode-suitelet/src/client_scripts/fs_workflow_billing_cs.js
+patterns/multi-mode-suitelet/src/client_scripts/fs_workflow_entry_cs.js
+patterns/multi-mode-suitelet/src/client_scripts/fs_workflow_manage_cs.js
+patterns/multi-mode-suitelet/src/lib/
+patterns/multi-mode-suitelet/src/lib/record_helpers.js
+patterns/multi-mode-suitelet/src/lib/so_builder.js
+patterns/multi-mode-suitelet/src/modes/
+patterns/multi-mode-suitelet/src/modes/billing_mode.js
+patterns/multi-mode-suitelet/src/modes/entry_mode.js
+patterns/multi-mode-suitelet/src/modes/management_mode.js
+patterns/orchestrator-user-event/
+patterns/orchestrator-user-event/README.md
+patterns/orchestrator-user-event/__tests__/
+patterns/orchestrator-user-event/__tests__/orchestrator.integration.test.js
+patterns/orchestrator-user-event/config/
+patterns/orchestrator-user-event/config/fs_base_handler.js
+patterns/orchestrator-user-event/deploy/
+patterns/orchestrator-user-event/deploy/deploy.xml
+patterns/orchestrator-user-event/src/
+patterns/orchestrator-user-event/src/fs_invoice_orchestrator_ue.js
+patterns/orchestrator-user-event/src/handlers/
+patterns/orchestrator-user-event/src/handlers/fs_field_derivation_handler.js
+patterns/orchestrator-user-event/src/handlers/fs_surcharge_handler.js
+patterns/orchestrator-user-event/src/handlers/fs_validation_handler.js
+patterns/orchestrator-user-event/src/lib/
+patterns/orchestrator-user-event/src/lib/fs_handler_registry.js
+patterns/pdf-generation/
+patterns/pdf-generation/README.md
+patterns/pdf-generation/deploy/
+patterns/pdf-generation/deploy/deploy.xml
+patterns/pdf-generation/src/
+patterns/pdf-generation/src/fs_email_sender_wa.js
+patterns/pdf-generation/src/fs_pdf_generator_sl.js
+patterns/pdf-generation/src/lib/
+patterns/pdf-generation/src/lib/data_sources.js
+patterns/pdf-generation/src/lib/line_item_grouper.js
+patterns/pdf-generation/src/templates/
+patterns/pdf-generation/src/templates/invoice_template.html
+patterns/restlet-api-suite/
+patterns/restlet-api-suite/README.md
+patterns/restlet-api-suite/deploy.xml
+patterns/restlet-api-suite/fs_customer_rl.js
+patterns/restlet-api-suite/fs_fulfillment_rl.js
+patterns/restlet-api-suite/fs_invoice_rl.js
+patterns/restlet-api-suite/fs_job_rl.js
+patterns/restlet-api-suite/fs_payment_rl.js
+patterns/restlet-api-suite/fs_sales_order_rl.js
+patterns/restlet-api-suite/lib/
+patterns/restlet-api-suite/lib/error_handler.js
+patterns/restlet-api-suite/lib/external_id_matcher.js
+patterns/restlet-api-suite/lib/validation.js
+patterns/restlet-api-suite/postman/
+patterns/restlet-api-suite/postman/netsuite_api_collection.json
+patterns/restlet-api-suite/test/
+patterns/restlet-api-suite/test/customer_rl.test.js
+patterns/restlet-api-suite/test/error_handler.test.js
+patterns/restlet-api-suite/test/external_id_matcher.test.js
+patterns/restlet-api-suite/test/validation.test.js
+scripts/
+scripts/check-links.sh
+shared/
+shared/README.md
+shared/governance_guard.js
+shared/record_helpers.js
+shared/search_helpers.js
+shared/mocks/
+shared/mocks/format.js
+shared/mocks/log.js
+shared/mocks/record.js
+shared/mocks/runtime.js
+shared/mocks/search.js
+shared/mocks/serverWidget.js
+shared/mocks/url.js
+
+sent 801,597 bytes  received 2,084 bytes  1,607,362.00 bytes/sec
+total size is 792,993  speedup is 0.99
+[2026-03-20 22:02:10] [INFO] LAYER 3 COMPLETE: Files copied with publishignore rules applied
+[2026-03-20 22:02:12] [INFO] === LAYER 5: Pre-Push Output Scan ===
+[2026-03-20 22:02:12] [INFO] Running final gitleaks scan on staging area...
+
+    ○
+    │╲
+    │ ○
+    ○ ░
+    ░    gitleaks
+
+[90m10:02PM[0m [32mINF[0m scan completed in 31.8ms
+[90m10:02PM[0m [32mINF[0m no leaks found
+[2026-03-20 22:02:12] [INFO] Scanning staging area for blocked terms...
+[2026-03-20 22:02:17] [INFO] LAYER 5 PASSED: No blocked terms in staging area
+[2026-03-20 22:02:17] [INFO] === LAYER 6: Push to Public Repo ===
+[2026-03-20 22:02:17] [INFO] DRY RUN: Would push to git@github.com:FlowSync-Consulting/netsuite-patterns.git
+[2026-03-20 22:02:17] [INFO] Files that would be published:
+./docs/PATTERNS.md
+./docs/PUBLISH_DRY_RUN_OUTPUT.txt
+./docs/PUBLISH_SCRIPT_USAGE.md
+./docs/TESTING.md
+./.gitignore
+./.gitleaks.toml
+./jest.config.js
+./LICENSE
+./LINK_INVENTORY.md
+./package.json
+./package-lock.json
+./patterns/batch-transaction-search/deploy/deploy.xml
+./patterns/batch-transaction-search/README.md
+./patterns/batch-transaction-search/src/fs_batch_search_sl.js
+./patterns/batch-transaction-search/src/lib/input_parser.js
+./patterns/batch-transaction-search/src/lib/result_renderer.js
+./patterns/config-driven-suitelet/deploy/deploy.xml
+./patterns/config-driven-suitelet/README.md
+./patterns/config-driven-suitelet/src/fs_config_driven_form_builder.js
+./patterns/config-driven-suitelet/src/fs_territory_performance_sl.js
+./patterns/config-driven-suitelet/src/fs_territory_report_columns_config.js
+./patterns/config-driven-suitelet/__tests__/fs_config_driven_form_builder.spec.js
+./patterns/integration-pipeline/deploy.xml
+./patterns/integration-pipeline/fs_inbound_rl.js
+./patterns/integration-pipeline/fs_processor_mr.js
+./patterns/integration-pipeline/lib/duplicate_detector.js
+./patterns/integration-pipeline/lib/error_handler.js
+./patterns/integration-pipeline/lib/segmentation.js
+./patterns/integration-pipeline/lib/status_machine.js
+./patterns/integration-pipeline/lib/validation.js
+./patterns/integration-pipeline/README.md
+./patterns/integration-pipeline/test/duplicate_detector.test.js
+./patterns/integration-pipeline/test/segmentation.test.js
+./patterns/integration-pipeline/test/status_machine.test.js
+./patterns/multi-mode-suitelet/deploy/deploy.xml
+./patterns/multi-mode-suitelet/objects/customlist_fs_entry_outcome.xml
+./patterns/multi-mode-suitelet/objects/customlist_fs_entry_status.xml
+./patterns/multi-mode-suitelet/objects/customrecord_fs_work_entry.xml
+./patterns/multi-mode-suitelet/README.md
+./patterns/multi-mode-suitelet/src/client_scripts/fs_workflow_billing_cs.js
+./patterns/multi-mode-suitelet/src/client_scripts/fs_workflow_entry_cs.js
+./patterns/multi-mode-suitelet/src/client_scripts/fs_workflow_manage_cs.js
+./patterns/multi-mode-suitelet/src/fs_workflow_tracker_sl.js
+./patterns/multi-mode-suitelet/src/lib/record_helpers.js
+./patterns/multi-mode-suitelet/src/lib/so_builder.js
+./patterns/multi-mode-suitelet/src/modes/billing_mode.js
+./patterns/multi-mode-suitelet/src/modes/entry_mode.js
+./patterns/multi-mode-suitelet/src/modes/management_mode.js
+./patterns/multi-mode-suitelet/__tests__/entry_mode.test.js
+./patterns/multi-mode-suitelet/__tests__/so_builder.test.js
+./patterns/multi-mode-suitelet/__tests__/workflow_tracker.test.js
+./patterns/orchestrator-user-event/config/fs_base_handler.js
+./patterns/orchestrator-user-event/deploy/deploy.xml
+./patterns/orchestrator-user-event/README.md
+./patterns/orchestrator-user-event/src/fs_invoice_orchestrator_ue.js
+./patterns/orchestrator-user-event/src/handlers/fs_field_derivation_handler.js
+./patterns/orchestrator-user-event/src/handlers/fs_surcharge_handler.js
+./patterns/orchestrator-user-event/src/handlers/fs_validation_handler.js
+./patterns/orchestrator-user-event/src/lib/fs_handler_registry.js
+./patterns/orchestrator-user-event/__tests__/orchestrator.integration.test.js
+./patterns/pdf-generation/deploy/deploy.xml
+./patterns/pdf-generation/README.md
+./patterns/pdf-generation/src/fs_email_sender_wa.js
+./patterns/pdf-generation/src/fs_pdf_generator_sl.js
+./patterns/pdf-generation/src/lib/data_sources.js
+./patterns/pdf-generation/src/lib/line_item_grouper.js
+./patterns/pdf-generation/src/templates/invoice_template.html
+./patterns/restlet-api-suite/deploy.xml
+./patterns/restlet-api-suite/fs_customer_rl.js
+./patterns/restlet-api-suite/fs_fulfillment_rl.js
+./patterns/restlet-api-suite/fs_invoice_rl.js
+./patterns/restlet-api-suite/fs_job_rl.js
+./patterns/restlet-api-suite/fs_payment_rl.js
+./patterns/restlet-api-suite/fs_sales_order_rl.js
+./patterns/restlet-api-suite/lib/error_handler.js
+./patterns/restlet-api-suite/lib/external_id_matcher.js
+./patterns/restlet-api-suite/lib/validation.js
+./patterns/restlet-api-suite/postman/netsuite_api_collection.json
+./patterns/restlet-api-suite/README.md
+./patterns/restlet-api-suite/test/customer_rl.test.js
+./patterns/restlet-api-suite/test/error_handler.test.js
+./patterns/restlet-api-suite/test/external_id_matcher.test.js
+./patterns/restlet-api-suite/test/validation.test.js
+./README.md
+./scripts/check-links.sh
+./SETUP_STATUS.md
+./shared/governance_guard.js
+./shared/mocks/format.js
+./shared/mocks/log.js
+./shared/mocks/record.js
+./shared/mocks/runtime.js
+./shared/mocks/search.js
+./shared/mocks/serverWidget.js
+./shared/mocks/url.js
+./shared/README.md
+./shared/record_helpers.js
+./shared/search_helpers.js
+[2026-03-20 22:02:17] [INFO] === LAYER 7: Post-Push Verification ===
+[2026-03-20 22:02:17] [INFO] DRY RUN: Skipping post-push verification
+
+=== PUBLISH COMPLETE ===
+[2026-03-20 22:02:17] [INFO] Summary:
+[2026-03-20 22:02:17] [INFO]   String replacements: [2026-03-20 22:02:10] [INFO] === LAYER 2: String Replacement Engine ===
+[2026-03-20 22:02:10] [INFO] Applying string replacements...
+[2026-03-20 22:02:10] [INFO] Pattern: Internal domain URLs
+[2026-03-20 22:02:11] [INFO] Pattern: Deprecated .lan domain URLs
+[2026-03-20 22:02:11] [INFO] Pattern: Secrets service domain
+[2026-03-20 22:02:11] [INFO]   Replacing in PUBLISH_SCRIPT_USAGE.md: 1 occurrences
+[2026-03-20 22:02:11] [INFO] Pattern: Tower domain
+[2026-03-20 22:02:11] [INFO]   Replacing in PUBLISH_SCRIPT_USAGE.md: 1 occurrences
+[2026-03-20 22:02:11] [INFO] Pattern: Atlas domain
+[2026-03-20 22:02:12] [INFO]   Replacing in PUBLISH_SCRIPT_USAGE.md: 1 occurrences
+[2026-03-20 22:02:12] [INFO] LAYER 2 COMPLETE: 3 replacements made
+3
+[2026-03-20 22:02:17] [INFO]   Files published: 97
+[2026-03-20 22:02:17] [INFO]   Target repo: git@github.com:FlowSync-Consulting/netsuite-patterns.git
+[2026-03-20 22:02:17] [INFO]   Mode: DRY RUN (no changes made)
+[2026-03-20 22:02:17] [INFO]   Log file: /home/ben/.local/share/flowsync-publish/publish-2026-03-20-220204.log
+
+[2026-03-20 22:02:17] [INFO] === FlowSync Publish Script Completed: Fri Mar 20 10:02:17 PM UTC 2026 ===
+[2026-03-20 22:02:17] [INFO] Cleaning up temporary directory: /tmp/flowsync-publish-MQdWcU
